@@ -109,3 +109,45 @@ import 'dart:io';
 
 // 6.Write a dart program to take input for two arrays which is two dimensional from user find the sum of two arrays and display it in the console.
 
+void main() {
+  print("Enter number of lists");
+  int size = int.parse(stdin.readLineSync()!);
+
+  print("Enter elements in each list");
+  int length = int.parse(stdin.readLineSync()!);
+
+  List<List<int>> list1 = [];
+  print("\nEnter elements of first list");
+  for (int i = 0; i < size; i++) {
+    List<int> first = [];
+    for (int j = 0; j < length; j++) {
+      print("Enter element [$i][$j]");
+      first.add(int.parse(stdin.readLineSync()!));
+    }
+    list1.add(first);
+  }
+  List<List<int>> list2 = [];
+  print("\nEnter elements of second list");
+  for (int i = 0; i < size; i++) {
+    List<int> second = [];
+    for (int j = 0; j < length; j++) {
+      print("Enter element [$i][$j]");
+      second.add(int.parse(stdin.readLineSync()!));
+    }
+    list2.add(second);
+  }
+
+  List<List<int>> sum = [];
+  for (int i = 0; i < size; i++) {
+    List<int> first = [];
+    for (int j = 0; j < length; j++) {
+      first.add(list1[i][j] + list2[i][j]);
+    }
+    sum.add(first);
+  }
+
+  print("\n Sum of the two lists");
+  for (int i = 0; i < size; i++) {
+    print(sum[i]);
+  }
+}
